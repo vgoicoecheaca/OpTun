@@ -1,0 +1,726 @@
+#############  G4DS Log File  #############
+
+------------------------------------------
+                   G4DS                   
+
+     The Dark Side Geant4 Simulator        
+------------------------------------------
+
+
+------------------------------------------
+                   Input                  
+------------------------------------------
+
+/ds/manager/log development
+/ds/manager/verbosity 1
+/ds/manager/checkoverlap 0
+/ds/manager/eventcounter 1
+/ds/manager/writephotons 0
+/ds/manager/writedeposits 1
+/ds/manager/writedaughters 0
+
+
+/ds/detector/configuration 101
+  
+/run/heprandomseed 30
+
+/ds/physics/hadronic_list none
+/ds/physics/em_list livermore
+#/ds/physics/optics 3
+/run/initialize 
+
+/ds/generator/select     G4Gun
+/ds/generator/particle   geantino
+/ds/generator/energy	 9.7 keV
+/ds/generator/position 0.5 1 0  mm
+/ds/generator/direction 0 0 -1
+
+/run/beamOn 1
+
+
+
+
+
+------------------------------------------
+                   Output                 
+------------------------------------------
+
+Routine:src/DSDetectorConstruction.cc(93):Thu Mar  3 19:20:35 2022
+
+Routine:src/DSManagerMessenger.cc(139): Trace Verbosity: 1
+Routine:src/DSManagerMessenger.cc(103): Check Volume Overlaps: 0
+Routine:src/DSManagerMessenger.cc(130): Event Counter: 1
+Routine:src/DSManagerMessenger.cc(115): Write photons: 0
+Routine:src/DSManagerMessenger.cc(118): Write deposits: 1
+Routine:src/DSManagerMessenger.cc(124): Write daughters: 0
+Routine:src/DSDetectorConstructionMessenger.cc(384):Detector Configuration: 101
+Trace:src/DSRunActionMessenger.cc(133):HepRandom seed set to: 30
+Routine:src/DSPhysicsListMessenger.cc(118): Hadronic List: none
+Routine:src/DSPhysicsListMessenger.cc(123): EM List: livermore
+
+########## Detector Geometry ###########
+#-----------------------------#
+# Dark Side Geometry  [mm]    #
+#-----------------------------#
+
+
+WorldSizeX = 20000.
+WorldSizeY = 20000.
+WorldSizeZ = 20000.
+
+DSTankHeight = 12000.
+DSTankRMax = 7000.
+
+# Stainless Steel Sphere
+SSSRadius = 2000.
+
+# Cryostats
+CryostatShiftZ = 368.5
+
+TrunkShiftZ = 170.
+TrunkDiameter = 38.1
+TrunkThickness = 2.
+TrunkTopBottomOffsetZ = 150.
+TrunkTopBottomOffsetX = -38.1
+TrunkBottomHeight = 600.
+TrunkMiddleHeight = 203.2
+TrunkDistToCryostatAxis = 228.6
+
+
+# TPC
+TPCShiftZ = -28.6
+
+TeflonSupportDiameter = 469.9
+TeflonSupportThickness = 19.05
+TeflonSupportHeight = 386.08
+
+PMTAssemblyHeight = 142.24
+TeflonCapDiameter = 469.9
+TeflonCapHeight = 70.61
+
+LArBottomLayerThickness = 0.8
+CathodeWindowDiameter = 424.18
+CathodeWindowHeight = 6.35
+ITOThickness = 0.000015
+
+ReflectorInnerDiameter = 355.6
+ReflectorOuterDiameter = 406.4
+ReflectorHeight = 355.7
+AboveGridInnerDiameter = 358.9
+AboveGridOuterDiameter = 400.05
+AboveGridHeight = 15.03
+GasPocketThickness = 9.37
+TPBThickness = 0.1
+
+DivingBellHeight = 18.42
+DivingBellTopHeight = 3.18
+DivingBellOuterDiameter = 424.18
+DivingBellInnerDiameter = 416.56
+
+FieldRingsHeight = 342.9
+FieldRingsThickness = 4.167
+
+
+# TPC PMTs
+PMTBodyDiameter = 50.29              
+PMTBodyHeight = 122.43                  
+PMTHeadDiameter = 76.2                  
+PMTHeadHeight = 35.04                  
+PMTWallThickness = 0.55                       
+PMTWindowThickness = 3.5866
+PMTSpacing = 82.55
+PMTOffset  = 1
+Routine:src/DSIO.cc(165):Geometry Input File Closed
+Trace:src/DSParameters.cc(209):Detector Geometry loaded
+Trace:src/DSParameters.cc(443):Detector Properties loaded
+Trace:src/DSParameters.cc(456):TPC PMT Q.E. loaded.
+Routine:src/DSIO.cc(298):Cryostat Profile Input File Closed
+Routine:src/DSParameters.cc(213):Reading LSV PMT Geometry from file: 
+
+########## Veto PMT Positions ###########
+Routine:src/DSParameters.cc(223):Reading LSV PMT Geometry for DS-50 
+0, pmt 0	theta = 6.04757	phi = 1.74533
+1, pmt 1	theta = 1.1781	phi = 2.0944
+2, pmt 2	theta = 4.47851	phi = 0.698132
+3, pmt 3	theta = 4.16261	phi = 1.39626
+4, pmt 4	theta = 3.22013	phi = 2.44346
+5, pmt 5	theta = 3.90081	phi = 1.0472
+6, pmt 6	theta = 3.48193	phi = 1.0472
+7, pmt 7	theta = 4.31969	phi = 1.0472
+8, pmt 8	theta = 3.22013	phi = 1.39626
+9, pmt 9	theta = 0.813323	phi = 0.698132
+10, pmt 10	theta = 3.53429	phi = 1.74533
+11, pmt 11	theta = 3.22013	phi = 1.74533
+12, pmt 12	theta = 3.95492	phi = 0.698132
+13, pmt 13	theta = 0.968658	phi = 1.0472
+14, pmt 14	theta = 0.392699	phi = 1.39626
+15, pmt 15	theta = 0.785398	phi = 0.349066
+16, pmt 16	theta = 6.28319	phi = 0.349066
+17, pmt 17	theta = 1.02102	phi = 1.39626
+18, pmt 18	theta = 0.0785398	phi = 1.39626
+19, pmt 19	theta = 0.549779	phi = 1.0472
+20, pmt 20	theta = 1.9635	phi = 1.74533
+21, pmt 21	theta = 5.49779	phi = 0.349066
+22, pmt 22	theta = 6.04757	phi = 1.39626
+23, pmt 23	theta = 5.10509	phi = 1.39626
+24, pmt 24	theta = 3.84845	phi = 1.39626
+25, pmt 25	theta = 5.00211	phi = 0.698132
+26, pmt 26	theta = 4.47677	phi = 1.39626
+27, pmt 27	theta = 4.79093	phi = 1.39626
+28, pmt 28	theta = 2.27765	phi = 1.74533
+29, pmt 29	theta = 4.73857	phi = 1.0472
+30, pmt 30	theta = 2.43473	phi = 2.0944
+31, pmt 31	theta = 5.15745	phi = 1.0472
+32, pmt 32	theta = 0.289725	phi = 0.698132
+33, pmt 33	theta = 5.78577	phi = 2.0944
+34, pmt 34	theta = 5.41925	phi = 1.74533
+35, pmt 36	theta = 2.17293	phi = 2.44346
+36, pmt 37	theta = 0.706858	phi = 1.39626
+37, pmt 38	theta = 0.340339	phi = 2.0944
+38, pmt 39	theta = 2.90597	phi = 1.39626
+39, pmt 40	theta = 5.73341	phi = 1.74533
+40, pmt 41	theta = 5.52571	phi = 0.698132
+41, pmt 42	theta = 3.27249	phi = 2.0944
+42, pmt 43	theta = 4.71239	phi = 0.349066
+43, pmt 44	theta = 6.04931	phi = 0.698132
+44, pmt 45	theta = 5.99521	phi = 1.0472
+45, pmt 46	theta = 5.41925	phi = 1.39626
+46, pmt 47	theta = 1.64934	phi = 2.44346
+47, pmt 48	theta = 2.38412	phi = 0.698132
+48, pmt 49	theta = 3.92699	phi = 0.349066
+49, pmt 50	theta = 0.1309	phi = 1.0472
+50, pmt 51	theta = 5.73341	phi = 1.39626
+51, pmt 52	theta = 1.9635	phi = 1.3962
+52, pmt 53	theta = 2.64417	phi = 1.04726
+53, pmt 54	theta = 3.53429	phi = 1.39626
+54, pmt 55	theta = 5.57633	phi = 1.0472
+55, pmt 64	theta = 1.38754	phi = 1.0472
+56, pmt 65	theta = 2.35619	phi = 0.349066
+57, pmt 66	theta = 1.86052	phi = 0.698132
+58, pmt 67	theta = 1.64934	phi = 1.39626
+59, pmt 68	theta = 1.5708	phi = 0.349066
+60, pmt 69	theta = 0.785398	phi = 2.79253
+61, pmt 70	theta = 1.80642	phi = 1.0472
+62, pmt 71	theta = 1.33518	phi = 1.39626
+63, pmt 72	theta = 5.36689	phi = 2.0944
+64, pmt 73	theta = 1.33518	phi = 1.74533
+65, pmt 74	theta = 5.83813	phi = 2.44346
+66, pmt 75	theta = 0.706858	phi = 1.74533
+67, pmt 76	theta = 0.0785398	phi = 1.74533
+68, pmt 77	theta = 6.20465	phi = 2.0944
+69, pmt 78	theta = 0.602139	phi = 2.44346
+70, pmt 80	theta = 2.69653	phi = 2.44346
+71, pmt 81	theta = 2.01586	phi = 2.0944
+72, pmt 82	theta = 1.64934	phi = 1.74533
+73, pmt 83	theta = 1.59698	phi = 2.0944
+74, pmt 84	theta = 0.759218	phi = 2.0944
+75, pmt 85	theta = 0.0785398	phi = 2.44346
+76, pmt 86	theta = 1.12574	phi = 2.44346
+77, pmt 87	theta = 1.02102	phi = 1.74533
+78, pmt 88	theta = 4.71239	phi = 2.79253
+79, pmt 89	theta = 2.59181	phi = 1.74533
+80, pmt 90	theta = 0.392699	phi = 1.74533
+81, pmt 91	theta = 2.35619	phi = 2.79253
+82, pmt 92	theta = 2.85361	phi = 2.0944
+83, pmt 93	theta = 2.90597	phi = 1.74533
+84, pmt 94	theta = 6.28319	phi = 2.79253
+85, pmt 95	theta = 3.14159	phi = 2.79253
+86, pmt 96	theta = 1.5708	phi = 2.79253
+87, pmt 97	theta = 3.84845	phi = 1.74533
+88, pmt 98	theta = 3.74373	phi = 2.44346
+89, pmt 99	theta = 3.69137	phi = 2.0944
+90, pmt 100	theta = 5.31453	phi = 2.44346
+91, pmt 101	theta = 4.52913	phi = 2.0944
+92, pmt 102	theta = 3.92699	phi = 2.79253
+93, pmt 103	theta = 4.11025	phi = 2.0944
+94, pmt 104	theta = 5.49779	phi = 2.79253
+95, pmt 105	theta = 4.79093	phi = 2.44346
+96, pmt 106	theta = 4.47677	phi = 1.74533
+97, pmt 107	theta = 4.94801	phi = 2.0944
+98, pmt 108	theta = 5.10509	phi = 1.74533
+99, pmt 109	theta = 4.16261	phi = 1.74533
+100, pmt 110	theta = 4.79093	phi = 1.74533
+101, pmt 111	theta = 4.26733	phi = 2.44346
+102, pmt 112	theta = 2.27765	phi = 1.39626
+103, pmt 113	theta = 3.43132	phi = 0.698132
+104, pmt 114	theta = 2.90772	phi = 0.698132
+105, pmt 115	theta = 2.59181	phi = 1.39626
+106, pmt 116	theta = 2.22529	phi = 1.0472
+107, pmt 117	theta = 3.14159	phi = 0.349066
+108, pmt 118	theta = 1.33692	phi = 0.698132
+109, pmt 119	theta = 3.06305	phi = 1.0472
+Routine:src/DSIO.cc(274):Veto PMT Geometry Input File Closed
+########## LSV Optics  ###########
+# ----------------------------#
+# DS LSV Optics               #
+#-----------------------------#
+
+# LS scintillation yield (in units /MeV) is untuned.
+ScintillationYield	= 18500
+
+# LS Birks factors (in units cm/MeV) from Borexino PRD (2014)
+BirksBeta		= 0.0109
+Trace:src/DSParameters.cc(545): LS Birks Constant for Betas: 0.0109 cm/MeV
+BirksAlpha		= 0.0218
+Trace:src/DSParameters.cc(549): LS Birks Constant for Alphas: 0.0218 cm/MeV
+BirksProton		= 0.0109
+Trace:src/DSParameters.cc(553): LS Birks Constant for Protons: 0.0109 cm/MeV
+
+# LS Resolution Scale set to 1 (Gaussian with sigma = sqrt)
+ResolutionScale		= 1.0
+
+# Scintillation times (in ns) and weight from Borexino
+# used if /ds/physics/LSoptics 2 in the mac file
+BetaScintTime1		= 3.7
+BetaScintTime2		= 24
+BetaScintTime3		= 60
+BetaScintTime4		= 600
+BetaScintWeight1	= 0.889
+BetaScintWeight2	= 0.055
+BetaScintWeight3	= 0.027
+BetaScintWeight4	= 0.029
+AlphaScintTime1		= 3.9
+AlphaScintTime2		= 26.
+AlphaScintTime3		= 110.
+AlphaScintTime4		= 630.
+AlphaScintWeight1	= 0.674 
+AlphaScintWeight2	= 0.146
+AlphaScintWeight3	= 0.103
+AlphaScintWeight4	= 0.077
+
+# LS Fast and Slow time constant (in ns) from Borexino
+# used if /ds/physics/LSoptics 1 in the mac file
+FastTime		= 2.0
+SlowTime		= 17.61
+# LS Yield Ratio: ratio between Fast and Slow scintillation from Borexino
+# used if /ds/physics/LSoptics 1 in the mac file
+YieldRatio		= 0.93
+
+# LS WLS (PPO) time constant (in ns) and efficiency from Borexino
+WLSTime			= 1.8
+WLSEfficiency		= 0.8
+
+# Lumirror
+LumirrorEff 		= 0.
+LumirrorSpecLobe 	= 0.
+LumirrorSpecSpike 	= 0.
+LumirrorBackscat 	= 0.
+LumirrorRindex 		= 1.
+
+# Electropolished Stainless Steel (TPC outer cryostat surface)
+EpssRefl 		= 0.58
+EpssEff 		= 0.
+EpssSpecLobe 		= 0.65
+EpssSpecSpike 		= 0.
+EpssBackscat 		= 0.
+EpssRindex 		= 1.
+
+# PhotoCathode
+#CathodeRefl 		= 0.2
+VCathodeRefl 		= 0.1
+VCathodeEff 		= 0.
+VCathodeSpecLobe 	= 1.
+VCathodeSpecSpike 	= 0.
+VCathodeBackscat 	= 0.
+VCathodeRindex 		= 1.
+
+# PMT Back
+PMTBackRefl 		= 0.78
+PMTBackEff 		= 0.
+PMTBackSpecLobe 	= 1.
+PMTBackSpecSpike 	= 0.0
+PMTBackBackscat 	= 0.
+PMTBackRindex 		= 1.
+
+# Untreated Stainless Steel (flange surface)
+UnssRefl 		= 0.48
+UnssEff 		= 0.
+UnssSpecLobe 		= 0.65
+UnssSpecSpike 		= 0.0
+UnssBackscat 		= 0.
+UnssRindex 		= 1.
+Routine:src/DSIO.cc(210):LSV Optics Input File Closed
+Routine:src/DSIO.cc(351):PC Attenuation Length Input File Closed
+Routine:src/DSIO.cc(372):PPO Attenuation Length Input File Closed
+Routine:src/DSIO.cc(393):TMB Attenuation Length Input File Closed
+Routine:src/DSIO.cc(329):PC Refraction Index Input File Closed
+Routine:src/DSIO.cc(415):Lumirror Reflectivity Input File Closed
+Routine:src/DSIO.cc(436):DS50 Veto PMT Quantum Efficiency Input File Closed
+Routine:src/DSParameters.cc(835):LSV Optics Properties loaded
+
+########## Detector Optics Tuning ###########
+  
+# -----------------------------#
+# Dark Side Optics            #
+#-----------------------------#
+#  
+# UV flag: wavelength < 150 nm
+# Vis flag: wavelength > 150 nm
+#
+#-----------------------------#
+# Refraction Indexes
+
+#factor w/r to LArRindex (!= 1. only if WithNewGridModel is 0)
+GridSteelRindScale    = 1.
+
+#absolute
+PhotocathodeUVRind    = 2.
+PhotocathodeVisRind   = 4.9
+FusedSilicaUVRind     = 1.47
+FusedSilicaVisRind    = 1.47
+TPBUVRind             = 1.47
+TPBVisRind            = 1.22
+GArRindexScale        = 1.074
+PArRind               = 1.27
+
+#-----------------------------#
+# Absorption Lengths   [m]
+
+GaseousArgonUVAbs    = 100.
+GaseousArgonVisAbs   = 100.
+LiquidArgonUVAbs     = 100.
+LiquidArgonVisAbs    = 100.
+# myGrid_h/2 = 0.00005 m
+GridSteelUVAbs       = 1000.  # PDM: Made longer -- abs len not used.
+GridSteelVisAbs      = 1000.  # PDM: Made longer -- abs len not used.
+FusedSilicaUVAbs     = 0.0000001
+FusedSilicaVisAbs    = 100.
+TPBUVAbs             = 1000
+TPBVisAbs            = 1000.
+
+#-----------------------------#
+# Other WLS Properties
+
+WLSAbsorptionFactor   = 0.04
+#the above parameter is different from std TPB absrption length
+WLSMeanNumberPhotons  = 1.
+WLSTimeConstant_ns    = 1.5
+WLSEfficiency         = 1.
+
+#-----------------------------#
+# Rayligh scattering scaling factors
+
+LArRayleighScale      = 0.8
+
+#-----------------------------#
+# Rayligh scattering length [m]
+
+FSilicaRaylVisLength  = 100.
+FSilicaRaylUVLength   = 1.
+
+#-----------------------------#
+# Placements (booleans)
+
+WithITO               = 1
+WithGasPocket         = 1
+WithNewGridModel      = 1
+WithDefect            = 0 # CZ: Add TPB defect.
+WithSaggingModel      = 0 # CZ: When it is set to 1, use the model. Otherwise, use the parameters in s2_radial_correction.dat (may double count geometrical effect).
+GridNormalTransparency = 0.9506 # Actual grid transparency at normal incidence
+
+#-----------------------------#
+# Surfaces (parameters)
+# Ref = Geant4 reflectivity is actually (1 - absorption)
+# transittance and reflection are then driven by RINDEXs
+
+LArGridUVRef        = .1  # PDM: Grid steel, extrapolated from meas @>250 nm
+LArGridVisRef       = 0.5  # PDM: Grid steel, measured @ Princeton by G. Koh.  PDM X-26
+TeflonTPBUVRef      = .075
+TeflonTPBVisRef     = 0.98
+PMTLArUVRef         = .2
+PMTLArVisRef        = .2
+TeflonLArUVRef      = .075
+TeflonLArVisRef     = .98
+ArTPBVisTran        = 0.6
+
+Routine:src/DSIO.cc(188):Optics Input File Closed
+Trace:src/DSParameters.cc(422):#######    Detector Optics loaded      #######
+Develop:src/DSMaterial.cc(1593):----------------------------------------
+Develop:src/DSMaterial.cc(1594):              Material indexes          
+Develop:src/DSMaterial.cc(1595):----------------------------------------
+Routine:src/DSMaterial.cc(1599):PC: 0
+Routine:src/DSMaterial.cc(1599):TMB: 1
+Routine:src/DSMaterial.cc(1599):BoronScintillator: 2
+Routine:src/DSMaterial.cc(1599):Air: 3
+Routine:src/DSMaterial.cc(1599):Vacuum: 4
+Routine:src/DSMaterial.cc(1599):PPO: 5
+Routine:src/DSMaterial.cc(1599):DMP: 6
+Routine:src/DSMaterial.cc(1599):Acrylic: 7
+Routine:src/DSMaterial.cc(1599):LiquidArgon: 8
+Routine:src/DSMaterial.cc(1599):PseudoArgon: 9
+Routine:src/DSMaterial.cc(1599):NSLiquidArgon: 10
+Routine:src/DSMaterial.cc(1599):GaseousArgon: 11
+Routine:src/DSMaterial.cc(1599):LiquidXenon: 12
+Routine:src/DSMaterial.cc(1599):GaseousXenon: 13
+Routine:src/DSMaterial.cc(1599):Steel: 14
+Routine:src/DSMaterial.cc(1599):StainlessSteel: 15
+Routine:src/DSMaterial.cc(1599):GridSteel: 16
+Routine:src/DSMaterial.cc(1599):Water: 17
+Routine:src/DSMaterial.cc(1599):MetalLead: 18
+Routine:src/DSMaterial.cc(1599):Teflon: 19
+Routine:src/DSMaterial.cc(1599):Rock: 20
+Routine:src/DSMaterial.cc(1599):Norite: 21
+Routine:src/DSMaterial.cc(1599):HDPE: 22
+Routine:src/DSMaterial.cc(1599):Styrofoam: 23
+Routine:src/DSMaterial.cc(1599):MetalCopper: 24
+Routine:src/DSMaterial.cc(1599):MetalCopperCryo: 25
+Routine:src/DSMaterial.cc(1599):MetalTitanium: 26
+Routine:src/DSMaterial.cc(1599):ShipSteel: 27
+Routine:src/DSMaterial.cc(1599):TPB: 28
+Routine:src/DSMaterial.cc(1599):ThreeMFoil: 29
+Routine:src/DSMaterial.cc(1599):FusedSilica: 30
+Routine:src/DSMaterial.cc(1599):SodiumIodide: 31
+Routine:src/DSMaterial.cc(1599):ITO: 32
+Routine:src/DSMaterial.cc(1599):LiquidNitrogen: 33
+Routine:src/DSMaterial.cc(1599):GaseousNitrogen: 34
+Routine:src/DSMaterial.cc(1599):Kovar: 35
+Routine:src/DSMaterial.cc(1599):Bialkali: 36
+Routine:src/DSMaterial.cc(1599):Kapton: 37
+Routine:src/DSMaterial.cc(1599):Concrete: 38
+Routine:src/DSMaterial.cc(1599):Aluminum: 39
+Routine:src/DSMaterial.cc(1599):Glass: 40
+Routine:src/DSMaterial.cc(1599):Nylon: 41
+Routine:src/DSMaterial.cc(1599):NylonL: 42
+Routine:src/DSMaterial.cc(1599):Bialkali: 43
+Routine:src/DSMaterial.cc(1599):Paint: 44
+Routine:src/DSMaterial.cc(1599):BorexScintillator: 45
+Routine:src/DSMaterial.cc(1599):BorexScintillator1: 46
+Routine:src/DSMaterial.cc(1599):BorexScintillator2: 47
+Routine:src/DSMaterial.cc(1599):DMPbuffer: 48
+Routine:src/DSMaterial.cc(1599):Quartz: 49
+Routine:src/DSMaterial.cc(1599):Beryllium: 50
+Routine:src/DSMaterial.cc(1599):Derlin: 51
+Routine:src/DSMaterial.cc(1599):BlackHole: 52
+Routine:src/DSMaterial.cc(1599):fGdOxide: 53
+Routine:src/DSMaterial.cc(1599):GdScintillator: 54
+Routine:src/DSMaterial.cc(1599):GdWater: 55
+Routine:src/DSMaterial.cc(1599):MetalSilicon: 56
+Routine:src/DSMaterial.cc(1599):BoroSilicateGlass: 57
+Routine:src/DSMaterial.cc(1599):FakePhotocathode: 58
+Routine:src/DSMaterial.cc(1599):ClLi: 59
+Routine:src/DSMaterial.cc(1599):NatClLi: 60
+Routine:src/DSMaterial.cc(1599):OrtoCarb: 61
+Routine:src/DSMaterial.cc(1599):Li6Scintillator: 62
+Routine:src/DSMaterial.cc(1599):NatLi6Scintillator: 63
+Routine:src/DSMaterial.cc(1599):OrtoCarbScintillator: 64
+Routine:src/DSMaterial.cc(1599):GdAcrylic: 65
+Routine:src/DSMaterial.cc(1599):VetoLiquidArgon2: 66
+Routine:src/DSMaterial.cc(1599):Naphthalene: 67
+Routine:src/DSMaterial.cc(1599):Altustipe: 68
+Routine:src/DSMaterial.cc(1599):BC454: 69
+Routine:src/DSMaterial.cc(1599):PlyWood: 70
+Routine:src/DSMaterial.cc(1599):InsulatingFoam: 71
+Routine:src/DSMaterial.cc(1599):VetoLiquidArgon1: 72
+Routine:src/DSMaterial.cc(1599):AcrylicDART: 73
+Routine:src/DSMaterial.cc(1599):VetoPScint: 74
+Routine:src/DSMaterial.cc(1599):Methane: 75
+Routine:src/DSMaterial.cc(1599):VetoMixture: 76
+Routine:src/DSMaterial.cc(1599):XeLiquidArgon: 77
+Routine:src/DSMaterial.cc(1599):Invar: 78
+Routine:src/DSMaterial.cc(1599):Arlon: 79
+Routine:src/DSMaterial.cc(1599):MetalTungsten: 80
+Routine:src/DSMaterial.cc(1599):MetalTantalum: 81
+Develop:src/DSMaterial.cc(1607):----------------------------------------
+Routine:src/DSDetectorConstruction.cc(289):Detector configuration - TPC for ReD - 2 101
+Routine:src/DSDetectorReD.cc(44): Constructing ReD Setup Geometry
+Routine:src/DSDetectorReD.cc(79):ReD cryostat configuration: 0
+Routine:src/DSDetectorReD.cc(81):vacuum flag 0
+Routine:src/DSDetectorReD.cc(83):cryostat flag 0
+Routine:include/DSDetectorReD.hh(32):OuterCryostat pos (231,-0,-0) in World_Logic
+Routine:include/DSDetectorReD.hh(32):CryostatVac pos (0,0,0) in OuterCryostat_Logic
+Routine:include/DSDetectorReD.hh(32):CryoInner pos (0,0,0) in CryostatVac_Logic
+Routine:include/DSDetectorReD.hh(32):InactiveLAr pos (0,0,0) in SolidCryoInner_Logic
+Routine:include/DSDetectorReD.hh(32):TPC pos (-231,0,0) in SolidInactiveLAr_Logic
+Routine:include/DSDetectorReD.hh(32):Reflection_drift_side_backPhys pos (0,0,0) in TPCLogic
+Routine:include/DSDetectorReD.hh(32):Reflection_drift_side_ESRPhys pos (0,0,0) in Reflection_drift_side_backLogic
+Routine:include/DSDetectorReD.hh(32):Reflection_drift_side_frontPhys pos (0,0,0) in Reflection_drift_side_ESRLogic
+Routine:include/DSDetectorReD.hh(32):Reflection_drift_side_frontTPBPhys pos (0,0,0) in Reflection_drift_side_frontLogic
+Routine:include/DSDetectorReD.hh(32):Field_cage_support_exPhys0 pos (0,39.004,-4.028) in TPCLogic
+Routine:include/DSDetectorReD.hh(32):Field_cage_support_exPhys1 pos (-39.004,2.38831e-15,-4.028) in TPCLogic
+Routine:include/DSDetectorReD.hh(32):Field_cage_support_exPhys2 pos (-4.77661e-15,-39.004,-4.028) in TPCLogic
+Routine:include/DSDetectorReD.hh(32):Field_cage_support_exPhys3 pos (39.004,-7.16492e-15,-4.028) in TPCLogic
+Routine:include/DSDetectorReD.hh(32):Field_cage_shaping_ringPhys0 pos (32.754,0,-20) in TPCLogic
+Routine:include/DSDetectorReD.hh(32):Field_cage_shaping_ringPhys1 pos (32.754,0,-15) in TPCLogic
+Routine:include/DSDetectorReD.hh(32):Field_cage_shaping_ringPhys2 pos (32.754,0,-10) in TPCLogic
+Routine:include/DSDetectorReD.hh(32):Field_cage_shaping_ringPhys3 pos (32.754,0,-5) in TPCLogic
+Routine:include/DSDetectorReD.hh(32):Field_cage_shaping_ringPhys4 pos (32.754,0,0) in TPCLogic
+Routine:include/DSDetectorReD.hh(32):Field_cage_shaping_ringPhys5 pos (32.754,0,5) in TPCLogic
+Routine:include/DSDetectorReD.hh(32):Field_cage_shaping_ringPhys6 pos (32.754,0,10) in TPCLogic
+Routine:include/DSDetectorReD.hh(32):Field_cage_shaping_ringPhys7 pos (32.754,0,15) in TPCLogic
+Routine:include/DSDetectorReD.hh(32):Field_cage_shaping_ringPhys8 pos (32.754,0,20) in TPCLogic
+Routine:include/DSDetectorReD.hh(32):Field_cage_support_inPhys0 pos (28.05,28.05,0) in TPCLogic
+Routine:include/DSDetectorReD.hh(32):Field_cage_support_inPhys1 pos (-28.05,28.05,0) in TPCLogic
+Routine:include/DSDetectorReD.hh(32):Field_cage_support_inPhys2 pos (-28.05,-28.05,0) in TPCLogic
+Routine:include/DSDetectorReD.hh(32):Field_cage_support_inPhys3 pos (28.05,-28.05,0) in TPCLogic
+Routine:include/DSDetectorReD.hh(32):Field_cage_shaping_ring_thin_ssPhys0 pos (41,0,24.238) in TPCLogic
+Routine:include/DSDetectorReD.hh(32):Field_cage_shaping_ring_thin_ssPhys1 pos (41,0,25.812) in TPCLogic
+Routine:include/DSDetectorReD.hh(32):Extraction_gridPhys pos (0,0,25.025) in TPCLogic
+Routine:include/DSDetectorReD.hh(32):Anode_platePhys pos (0,0,37.8) in TPCLogic
+Routine:include/DSDetectorReD.hh(32):Anode_plateTPBPhys pos (0,0,35.55) in TPCLogic
+Routine:include/DSDetectorReD.hh(32):Diving_bell_rimPhys pos (0,0,30.05) in TPCLogic
+Routine:include/DSDetectorReD.hh(32):Anode_shaping_ringPhys pos (41,0,34.288) in TPCLogic
+Routine:include/DSDetectorReD.hh(32):Reflection_gas_side_backPhys pos (0,0,30.05) in TPCLogic
+Routine:include/DSDetectorReD.hh(32):Reflection_gas_side_ESRPhys pos (0,0,0) in Reflection_gas_side_backLogic
+Routine:include/DSDetectorReD.hh(32):Reflection_gas_side_frontPhys pos (0,0,0) in Reflection_gas_side_ESRLogic
+Routine:include/DSDetectorReD.hh(32):Reflection_gas_side_frontTPBPhys pos (0,0,0) in Reflection_gas_side_frontLogic
+Routine:include/DSDetectorReD.hh(32):Bottom_supportPhys pos (0,0,-35.2785) in TPCLogic
+Routine:include/DSDetectorReD.hh(32):Field_cage_shaping_ring_thick_copperPhys0 pos (35.25,0,-30.516) in TPCLogic
+Routine:include/DSDetectorReD.hh(32):Field_cage_shaping_ring_thick_copperPhys1 pos (35.25,0,-23.984) in TPCLogic
+Routine:include/DSDetectorReD.hh(32):Cathode_platePhys pos (0,0,-27.75) in TPCLogic
+Routine:include/DSDetectorReD.hh(32):Cathode_plateITOPhys0 pos (0,0,-26) in TPCLogic
+Routine:include/DSDetectorReD.hh(32):Cathode_plateITOPhys1 pos (0,0,-29.5) in TPCLogic
+Routine:include/DSDetectorReD.hh(32):Cathode_plateTPBPhys pos (0,0,-25.5) in TPCLogic
+Routine:include/DSDetectorReD.hh(32):readout_bdPhys0 pos (0,0,-40.025) in TPCLogic
+Routine:include/DSDetectorReD.hh(32):readout_bdPhys1 pos (0,0,50.075) in TPCLogic
+Routine:include/DSDetectorReD.hh(32):SiPM_Tile_SubPhys0 pos (0,0,-31.845) in TPCLogic
+Routine:include/DSDetectorReD.hh(32):SiPM_Tile_SubPhys1 pos (0,0,41.895) in TPCLogic
+Routine:include/DSDetectorReD.hh(32):SiPMPhys0 pos (-18.75,-20.8333,40.725) in TPCLogic
+Routine:include/DSDetectorReD.hh(32):SiPMPhys1 pos (-6.25,-20.8333,40.725) in TPCLogic
+Routine:include/DSDetectorReD.hh(32):SiPMPhys2 pos (6.25,-20.8333,40.725) in TPCLogic
+Routine:include/DSDetectorReD.hh(32):SiPMPhys3 pos (18.75,-20.8333,40.725) in TPCLogic
+Routine:include/DSDetectorReD.hh(32):SiPMPhys4 pos (-18.75,-12.5,40.725) in TPCLogic
+Routine:include/DSDetectorReD.hh(32):SiPMPhys5 pos (-6.25,-12.5,40.725) in TPCLogic
+Routine:include/DSDetectorReD.hh(32):SiPMPhys6 pos (6.25,-12.5,40.725) in TPCLogic
+Routine:include/DSDetectorReD.hh(32):SiPMPhys7 pos (18.75,-12.5,40.725) in TPCLogic
+Routine:include/DSDetectorReD.hh(32):SiPMPhys8 pos (-18.75,-4.16667,40.725) in TPCLogic
+Routine:include/DSDetectorReD.hh(32):SiPMPhys9 pos (-6.25,-4.16667,40.725) in TPCLogic
+Routine:include/DSDetectorReD.hh(32):SiPMPhys10 pos (6.25,-4.16667,40.725) in TPCLogic
+Routine:include/DSDetectorReD.hh(32):SiPMPhys11 pos (18.75,-4.16667,40.725) in TPCLogic
+Routine:include/DSDetectorReD.hh(32):SiPMPhys12 pos (-18.75,4.16667,40.725) in TPCLogic
+Routine:include/DSDetectorReD.hh(32):SiPMPhys13 pos (-6.25,4.16667,40.725) in TPCLogic
+Routine:include/DSDetectorReD.hh(32):SiPMPhys14 pos (6.25,4.16667,40.725) in TPCLogic
+Routine:include/DSDetectorReD.hh(32):SiPMPhys15 pos (18.75,4.16667,40.725) in TPCLogic
+Routine:include/DSDetectorReD.hh(32):SiPMPhys16 pos (-18.75,12.5,40.725) in TPCLogic
+Routine:include/DSDetectorReD.hh(32):SiPMPhys17 pos (-6.25,12.5,40.725) in TPCLogic
+Routine:include/DSDetectorReD.hh(32):SiPMPhys18 pos (6.25,12.5,40.725) in TPCLogic
+Routine:include/DSDetectorReD.hh(32):SiPMPhys19 pos (18.75,12.5,40.725) in TPCLogic
+Routine:include/DSDetectorReD.hh(32):SiPMPhys20 pos (-18.75,20.8333,40.725) in TPCLogic
+Routine:include/DSDetectorReD.hh(32):SiPMPhys21 pos (-6.25,20.8333,40.725) in TPCLogic
+Routine:include/DSDetectorReD.hh(32):SiPMPhys22 pos (6.25,20.8333,40.725) in TPCLogic
+Routine:include/DSDetectorReD.hh(32):SiPMPhys23 pos (18.75,20.8333,40.725) in TPCLogic
+Routine:include/DSDetectorReD.hh(32):Top_SiPM_holderPhys pos (0,0,44.3125) in TPCLogic
+Routine:include/DSDetectorReD.hh(32):ActiveLAr pos (0,0,0) in Reflection_drift_side_frontTPBLogic
+Routine:include/DSDetectorReD.hh(32):TPCinactiveLArPhys pos (0,0,0) in Reflection_gas_side_frontTPBLogic
+Routine:include/DSDetectorReD.hh(32):GasPocketPhys pos (0,0,1) in TPCinactiveLArLogic
+Routine:src/DSDetectorReD.cc(1565):TPC 1 gas pocket position: 27 TPCactiveLArH2 25 TPCGArZshift 2 mm
+Develop:src/DSDetectorConstruction.cc(329): LAr - GAr boundary z coordinate set to: 2.7 cm
+Routine:src/DSPhysicsList.cc(183):Livermore EM Physics List Active
+Routine:src/DSLight3.cc(538): MeanQuantaEnergy: 1.95e-05
+Routine:src/DSLight3.cc(542): S1ScaleFactor: 0.94116
+Routine:src/DSLight3.cc(546): S2Yield: 273.2
+Routine:src/DSLight3.cc(558): LindhardFactor: 0.25
+Routine:src/DSLight3.cc(550): ExcitationRatioER: 0.21
+Routine:src/DSLight3.cc(554): ExcitationRatioNR: 1
+Routine:src/DSLight3.cc(562): PhotonEneMean: 9.69e-06
+Routine:src/DSLight3.cc(566): PhotonEneWidth: 2.2e-07
+Routine:src/DSLight3.cc(570): D_T: 1.5e-06
+Routine:src/DSLight3.cc(574): D_L: 4.8e-07
+Routine:src/DSLight3.cc(578): Sigma0_Sq: 4.8e-07
+Routine:src/DSLight3.cc(582): LArTauFast: 6
+Routine:src/DSLight3.cc(586): LArTauSlow: 1600
+Routine:src/DSLight3.cc(590): GArTauFast: 11
+Routine:src/DSLight3.cc(594): GArTauSlow: 3200
+Routine:src/DSLight3.cc(606): GArSingletToTriplet: 0.09
+Routine:src/DSLight3.cc(598): TauReco: 0.8
+Routine:src/DSLight3.cc(602): TaueLAr: 1.58e+07
+Routine:src/DSLight3.cc(538): MeanQuantaEnergy: 1.95e-05
+Routine:src/DSLight3.cc(542): S1ScaleFactor: 0.94116
+Routine:src/DSLight3.cc(546): S2Yield: 273.2
+Routine:src/DSLight3.cc(558): LindhardFactor: 0.25
+Routine:src/DSLight3.cc(550): ExcitationRatioER: 0.21
+Routine:src/DSLight3.cc(554): ExcitationRatioNR: 1
+Routine:src/DSLight3.cc(562): PhotonEneMean: 9.69e-06
+Routine:src/DSLight3.cc(566): PhotonEneWidth: 2.2e-07
+Routine:src/DSLight3.cc(570): D_T: 1.5e-06
+Routine:src/DSLight3.cc(574): D_L: 4.8e-07
+Routine:src/DSLight3.cc(578): Sigma0_Sq: 4.8e-07
+Routine:src/DSLight3.cc(582): LArTauFast: 6
+Routine:src/DSLight3.cc(586): LArTauSlow: 1600
+Routine:src/DSLight3.cc(590): GArTauFast: 11
+Routine:src/DSLight3.cc(594): GArTauSlow: 3200
+Routine:src/DSLight3.cc(606): GArSingletToTriplet: 0.09
+Routine:src/DSLight3.cc(598): TauReco: 0.8
+Routine:src/DSLight3.cc(602): TaueLAr: 1.58e+07
+Routine:src/DSLight3.cc(538): MeanQuantaEnergy: 1.95e-05
+Routine:src/DSLight3.cc(542): S1ScaleFactor: 0.94116
+Routine:src/DSLight3.cc(546): S2Yield: 273.2
+Routine:src/DSLight3.cc(558): LindhardFactor: 0.25
+Routine:src/DSLight3.cc(550): ExcitationRatioER: 0.21
+Routine:src/DSLight3.cc(554): ExcitationRatioNR: 1
+Routine:src/DSLight3.cc(562): PhotonEneMean: 9.69e-06
+Routine:src/DSLight3.cc(566): PhotonEneWidth: 2.2e-07
+Routine:src/DSLight3.cc(570): D_T: 1.5e-06
+Routine:src/DSLight3.cc(574): D_L: 4.8e-07
+Routine:src/DSLight3.cc(578): Sigma0_Sq: 4.8e-07
+Routine:src/DSLight3.cc(582): LArTauFast: 6
+Routine:src/DSLight3.cc(586): LArTauSlow: 1600
+Routine:src/DSLight3.cc(590): GArTauFast: 11
+Routine:src/DSLight3.cc(594): GArTauSlow: 3200
+Routine:src/DSLight3.cc(606): GArSingletToTriplet: 0.09
+Routine:src/DSLight3.cc(598): TauReco: 0.8
+Routine:src/DSLight3.cc(602): TaueLAr: 1.58e+07
+Routine:src/DSPhysicsList.cc(208):Ion Physics List Active
+Routine:src/DSPhysicsList.cc(1112): Process Map Table - Index: 1091 ; Process Name: Transportation
+Routine:src/DSPhysicsList.cc(1112): Process Map Table - Index: 2010 ; Process Name: msc
+Routine:src/DSPhysicsList.cc(1112): Process Map Table - Index: 2002 ; Process Name: hIoni
+Routine:src/DSPhysicsList.cc(1112): Process Map Table - Index: 2008 ; Process Name: nuclearStopping
+Routine:src/DSPhysicsList.cc(1112): Process Map Table - Index: 8999 ; Process Name: DSLight3
+Routine:src/DSPhysicsList.cc(1112): Process Map Table - Index: 6201 ; Process Name: Decay
+Routine:src/DSPhysicsList.cc(1112): Process Map Table - Index: 6210 ; Process Name: RadioactiveDecay
+Routine:src/DSPhysicsList.cc(1112): Process Map Table - Index: 4121 ; Process Name: ionInelastic
+Routine:src/DSPhysicsList.cc(1112): Process Map Table - Index: 1999 ; Process Name: DSLScintillation
+Routine:src/DSPhysicsList.cc(1112): Process Map Table - Index: 2003 ; Process Name: hBrems
+Routine:src/DSPhysicsList.cc(1112): Process Map Table - Index: 2004 ; Process Name: hPairProd
+Routine:src/DSPhysicsList.cc(1112): Process Map Table - Index: 2005 ; Process Name: annihil
+Routine:src/DSPhysicsList.cc(1112): Process Map Table - Index: 2001 ; Process Name: CoulombScat
+Routine:src/DSPhysicsList.cc(1112): Process Map Table - Index: 2012 ; Process Name: phot
+Routine:src/DSPhysicsList.cc(1112): Process Map Table - Index: 2013 ; Process Name: compt
+Routine:src/DSPhysicsList.cc(1112): Process Map Table - Index: 2014 ; Process Name: conv
+Routine:src/DSPhysicsList.cc(1112): Process Map Table - Index: 2011 ; Process Name: Rayl
+Routine:src/DSPhysicsList.cc(1112): Process Map Table - Index: 3031 ; Process Name: OpAbsorption
+Routine:src/DSPhysicsList.cc(1112): Process Map Table - Index: 3033 ; Process Name: OpRayleigh
+Routine:src/DSPhysicsList.cc(1112): Process Map Table - Index: 3034 ; Process Name: OpWLS
+Routine:src/DSPhysicsList.cc(1112): Process Map Table - Index: 3032 ; Process Name: OpBoundary
+Routine:src/DSPhysicsList.cc(1051): Default Physics Cut Set to 0.1 cm 
+Routine:src/DSPrimaryGeneratorActionMessenger.cc(64):Generator: G4Gun
+Routine:src/DSGeneratorG4Gun.cc(33):G4ParticleGun Constructed.
+Routine:src/DSRunAction.cc(82):********************
+Routine:src/DSRunAction.cc(83):*** AUTOSEED OFF ***
+Routine:src/DSRunAction.cc(84):********************
+Routine:src/DSRunAction.cc(100):Random seed: 30
+Routine:src/DSRunAction.cc(112):Initialized Binary File: .fil
+Develop:src/DSGeneratorG4Gun.cc(72):geantino Energy: 0.0097 MeV; Position: (0.05,0.1,0) cm;  Direction: (0,0,-1) 
+Routine:src/DSEventAction.cc(133):>>> Event 0;  NPE = 0;  NPE/event = 0;  CPUTime/event = 0 s
+Trace:src/DSEventAction.cc(141):    Starting Position: (0.05,0.1,0) cm
+Trace:src/DSEventAction.cc(142):    Energy           : 9.7 keV
+Trace:src/DSEventAction.cc(143):    PDG              : 0
+Trace:src/DSEventAction.cc(146):
+Trace:src/DSEventHandler.cc(77):Event: ID        0
+Trace:src/DSEventHandler.cc(78):Event: PDG       0
+Trace:src/DSEventHandler.cc(79):Event: T         0
+Trace:src/DSEventHandler.cc(80):Event: E         9.7
+Trace:src/DSEventHandler.cc(81):Event: S1 E      0
+Trace:src/DSEventHandler.cc(82):Event: S2 E      0
+Trace:src/DSEventHandler.cc(83):Event: Veto QE   0
+Trace:src/DSEventHandler.cc(84):Event: TPC QE    0
+Trace:src/DSEventHandler.cc(85):Event: TPC DepE  0
+Trace:src/DSEventHandler.cc(86):Event: Veto DepE 0
+Trace:src/DSEventHandler.cc(87):Event: Mu DepE   0
+Trace:src/DSEventHandler.cc(88):Event: X         0.05
+Trace:src/DSEventHandler.cc(89):Event: Y         0.1
+Trace:src/DSEventHandler.cc(90):Event: Z         0
+Trace:src/DSEventHandler.cc(91):Event: BX        0
+Trace:src/DSEventHandler.cc(92):Event: BY        0
+Trace:src/DSEventHandler.cc(93):Event: BZ        0
+Trace:src/DSEventHandler.cc(94):Event: pX        0
+Trace:src/DSEventHandler.cc(95):Event: pY        0
+Trace:src/DSEventHandler.cc(96):Event: pZ        -1
+Trace:src/DSEventHandler.cc(97):Event: ND        0
+Trace:src/DSEventHandler.cc(98):Event: NDep      0
+Trace:src/DSEventHandler.cc(99):Event: NUs       0
+Trace:src/DSEventHandler.cc(100):Event: NPE       0
+Trace:src/DSEventHandler.cc(101):Event: MuNPE     0
+Trace:src/DSEventHandler.cc(102):Event: VetoNPE   0
+Trace:src/DSEventHandler.cc(103):Event: NPH       0
+Trace:src/DSEventHandler.cc(104): 
+Routine:src/DSIO.cc(109):Binary File Closed
